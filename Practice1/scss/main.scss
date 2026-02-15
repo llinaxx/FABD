@@ -1,0 +1,174 @@
+// ============================================
+// БЕЖЕВО-БЕЛАЯ ЦВЕТОВАЯ ГАММА
+// ============================================
+
+// ---------- ПЕРЕМЕННЫЕ ----------
+$beige-light: #fdf8f2;      // Светло-бежевый (фон)
+$beige-medium: #f5e6d3;     // Средне-бежевый (карточки)
+$beige-dark: #d4b89c;       // Темно-бежевый (акценты)
+$brown-soft: #8b7356;       // Мягкий коричневый (текст)
+$white-pure: #ffffff;       // Чисто белый
+$shadow-color: rgba(139, 115, 86, 0.1);
+
+$font-main: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+$border-radius-main: 16px;
+
+// ---------- МИКСИН ----------
+@mixin soft-shadow($opacity: 0.1) {
+    box-shadow: 0 4px 20px rgba(139, 115, 86, $opacity);
+}
+
+// ============================================
+// ОСНОВНЫЕ СТИЛИ
+// ============================================
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    background-color: $beige-light;
+    color: $brown-soft;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+// ---------- ШАПКА ----------
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: $white-pure;
+    border-radius: $border-radius-main;
+    @include soft-shadow(0.08);
+
+    &__title {
+        font-size: 2.5rem;
+        color: $brown-soft;
+        margin-bottom: 10px;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+}
+
+// ---------- СЕТКА КАРТОЧЕК ----------
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    flex: 1;
+}
+
+// ---------- КАРТОЧКА ТОВАРА ----------
+.card {
+    background-color: $white-pure;
+    border-radius: $border-radius-main;
+    overflow: hidden;
+    @include soft-shadow(0.12);
+    transition: transform 0.3s;
+
+    // Вложенность элементов
+    &__image-container {
+        height: 220px;
+        overflow: hidden;
+        background-color: $beige-medium;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+
+    &__content {
+        padding: 20px;
+    }
+
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: $brown-soft;
+    }
+
+    &__description {
+        color: $beige-dark;
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    &__price {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $brown-soft;
+    }
+
+    &__button {
+        display: inline-block;
+        background-color: $beige-medium;
+        color: $brown-soft;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: 500;
+        transition: all 0.3s;
+        border: 1px solid $beige-dark;
+
+        &:hover {
+            background-color: $beige-dark;
+            color: $white-pure;
+            transform: translateY(-2px);
+        }
+    }
+
+    // Модификатор для выделенной карточки
+    &--featured {
+        border: 2px solid $beige-dark;
+        transform: scale(1.02);
+    }
+
+    // Эффекты при наведении :)
+    &:hover {
+        transform: translateY(-8px);
+        @include soft-shadow(0.2);
+
+        .card__image {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// ---------- ПОДВАЛ ----------
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: $white-pure;
+    border-radius: $border-radius-main;
+    @include soft-shadow(0.08);
+
+    &__text {
+        color: $beige-dark;
+        font-size: 0.9rem;
+    }
+}
