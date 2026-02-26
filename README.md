@@ -69,8 +69,9 @@
 Скриншоты для 3 практики в папке Practice3!
 
 Видео для 4 практики:
-[IMG_7181.MOV.download.zip](https://github.com/user-attachments/files/25584888/IMG_7181.MOV.download.zip)
+
+
 
 Видео для 5 практики:
-[IMG_7181.MOV.download.zip](https://github.com/user-attachments/files/25584902/IMG_7181.MOV.download.zip)
+
 
