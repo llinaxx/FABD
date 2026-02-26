@@ -58,3 +58,9 @@
 
 **Фото:**
 
+<img width="1117" height="617" alt=" practice1" src="https://github.com/user-attachments/assets/a8a1eb9e-0df1-4c55-b6a5-6f6103b52bba" />
+
+<img width="474" height="226" alt="pracice2 1" src="https://github.com/user-attachments/assets/9e5bde3d-9b23-48d6-b220-7f3ababa47d9" />
+
+<img width="691" height="96" alt="practice2 2" src="https://github.com/user-attachments/assets/31d9d48c-9a03-4700-8bfb-40cb50ab0ebd" />
+
