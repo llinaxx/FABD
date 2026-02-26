@@ -58,9 +58,19 @@
 
 **Фото:**
 
+Скриншот для 1 практики:
 <img width="1117" height="617" alt=" practice1" src="https://github.com/user-attachments/assets/a8a1eb9e-0df1-4c55-b6a5-6f6103b52bba" />
 
+Скриншоты для 2 практики:
 <img width="474" height="226" alt="pracice2 1" src="https://github.com/user-attachments/assets/9e5bde3d-9b23-48d6-b220-7f3ababa47d9" />
 
 <img width="691" height="96" alt="practice2 2" src="https://github.com/user-attachments/assets/31d9d48c-9a03-4700-8bfb-40cb50ab0ebd" />
+
+Скриншоты для 3 практики в папке Practice3!
+
+Видео для 4 практики:
+[IMG_7181.MOV.download.zip](https://github.com/user-attachments/files/25584888/IMG_7181.MOV.download.zip)
+
+Видео для 5 практики:
+[IMG_7181.MOV.download.zip](https://github.com/user-attachments/files/25584902/IMG_7181.MOV.download.zip)
 
