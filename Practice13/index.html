@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мои заметки (офлайн)</title>
+  <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+  <style>
+    body {
+      background: #fdf8f2;
+      color: #8b7356;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #8b7356;
+      text-align: center;
+    }
+    .card {
+      background: #ffffff;
+      border: 2px solid #d4b89c;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    button {
+      background: #f5e6d3;
+      color: #8b7356;
+      border: 1px solid #d4b89c;
+    }
+    button:hover {
+      background: #d4b89c;
+      color: white;
+    }
+    .notes-list {
+      list-style: none;
+      padding: 0;
+    }
+    .notes-list li {
+      background: #ffffff;
+      border: 1px solid #d4b89c;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 10px;
+      color: #8b7356;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>📝 Мои заметки</h1>
+      <form id="note-form" class="row">
+        <input 
+          class="col-9" 
+          type="text" 
+          id="note-input" 
+          placeholder="Введите заметку..." 
+          required
+          style="border: 1px solid #d4b89c; border-radius: 12px; padding: 10px;"
+        >
+        <button class="col-3" type="submit" style="border-radius: 12px;">➕ Добавить</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Список заметок</h3>
+      <ul id="notes-list" class="notes-list"></ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
