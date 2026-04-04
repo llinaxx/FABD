@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Для Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  
+  <!-- Цвет темы для браузера -->
+  <meta name="theme-color" content="#d4b89c">
+  
+  <!-- Для iOS -->
+  <link rel="apple-touch-icon" href="/icons/favicon-128x128.png">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <title>Мои заметки (PWA + App Shell)</title>
+  <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+  <link rel="icon" href="icons/favicon-32x32.png" sizes="32x32" type="image/png">
+  
+  <style>
+    body {
+      background: #fdf8f2;
+      color: #8b7356;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .tab {
+      padding: 10px 20px;
+      background: #f5e6d3;
+      border: 1px solid #d4b89c;
+      border-radius: 30px;
+      cursor: pointer;
+      color: #8b7356;
+      font-weight: bold;
+    }
+    .tab.active {
+      background: #d4b89c;
+      color: white;
+    }
+    .header {
+      text-align: center;
+      padding: 20px;
+      background: #ffffff;
+      border-bottom: 2px solid #d4b89c;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    button {
+      background: #f5e6d3;
+      color: #8b7356;
+      border: 1px solid #d4b89c;
+    }
+    button:hover {
+      background: #d4b89c;
+      color: white;
+    }
+    .notes-list {
+      list-style: none;
+      padding: 0;
+    }
+    .notes-list li {
+      background: #ffffff;
+      border: 1px solid #d4b89c;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 10px;
+      color: #8b7356;
+    }
+    .delete-note {
+      float: right;
+      background: none;
+      border: none;
+      color: #d4b89c;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    .delete-note:hover {
+      color: #8b7356;
+      background: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📝 Мои заметки</h1>
+    <div class="tabs">
+      <button id="home-btn" class="tab active">Главная</button>
+      <button id="about-btn" class="tab">О приложении</button>
+    </div>
+  </div>
+
+  <!-- Основной контейнер для динамического контента -->
+  <main id="app-content" class="container">
+    <div class="is-center">Загрузка...</div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
