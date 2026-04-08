@@ -5,7 +5,6 @@
 
 **Результат:**  
 Готовая страница с тремя карточками товаров для магазина игрушек.  
-Файл: `Practice1/index.html`
 
 Скриншот для 1 практики:
 <img width="1117" height="617" alt=" practice1" src="https://github.com/user-attachments/assets/a8a1eb9e-0df1-4c55-b6a5-6f6103b52bba" />
