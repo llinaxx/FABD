@@ -1,14 +1,16 @@
 const express = require('express');
-const http = require('http');
+const https = require('https');
+const fs = require('fs');
 const socketIo = require('socket.io');
 const webpush = require('web-push');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 
+// === ВСТАВЬ СВОИ VAPID-КЛЮЧИ ===
 const vapidKeys = {
-  publicKey: 'BN-Zp9qWNN4qx0qxXSjaFyHOFPIbSSf7kBN8PvSs6P7xbUn26zpCUM-Pg3FFP4Ntpwems13diciIBGuQp48i1dk',
-  privateKey: 'Za83jW-xIDNVVoUUB2dg6lXrdrfdsXKJMmxwOb5ybMs'
+  publicKey: 'BOrXUkbFjiDo3G7u8zvZmvfp2ofcgtM8vgJfdkPJdOWsKJDOgGY_1iUEmQsGe4DpUXKsyj1yxT_bGw3bVvFtfHs',
+  privateKey: 'Z5zu5CjTGWGks8A71mzhavd6M9T6_fqdzSfHFGmBBuQ'
 };
 
 webpush.setVapidDetails(
@@ -21,10 +23,17 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(express.static(path.join(__dirname, '..')));
+
+// === ЗАГРУЗКА СЕРТИФИКАТОВ ДЛЯ HTTPS ===
+const options = {
+  key: fs.readFileSync(path.join(__dirname, '../localhost+2-key.pem')),
+  cert: fs.readFileSync(path.join(__dirname, '../localhost+2.pem'))
+};
 
 let subscriptions = [];
 
-const server = http.createServer(app);
+const server = https.createServer(options, app);
 const io = socketIo(server, {
   cors: { origin: "*", methods: ["GET", "POST"] }
 });
@@ -68,5 +77,5 @@ app.post('/unsubscribe', (req, res) => {
 
 const PORT = 3001;
 server.listen(PORT, () => {
-  console.log(`🚀 Сервер запущен на http://localhost:${PORT}`);
+  console.log(`🚀 HTTPS сервер запущен на https://localhost:${PORT}`);
 });

@@ -4,7 +4,7 @@ const homeBtn = document.getElementById('home-btn');
 const aboutBtn = document.getElementById('about-btn');
 
 // === WEBSOCKET ПОДКЛЮЧЕНИЕ ===
-const socket = io('http://localhost:3001');
+const socket = io('https://localhost:3001');
 
 function loadNotes() {
   const notes = JSON.parse(localStorage.getItem('notes') || '[]');
